@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" | sort -f | sed 's/\(.*\/\)*\(.*\)\.gif/\2/' | awk '{print $0}' ORS="\n"
+find . -type f "*.gif" | rev | cut -d "/" -f 1 | cut - '.' 2- | rev | LC_ALL=C sort -f
